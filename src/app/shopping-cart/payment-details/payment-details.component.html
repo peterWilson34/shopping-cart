@@ -1,1 +1,32 @@
-<p>payment-details works!</p>
+<form [formGroup]="paymentForm" (submit)="onCheckout()">
+  <div class="form-group">
+    <label>Card Number</label>
+    <div class="card-types">
+
+      <img src="assets/images/visa.svg" [ngClass]="{'active':cardType == 'visa'}" alt="">
+      <img src="assets/images/mastercard.svg" [ngClass]="{'active':cardType == 'mastercard'}" alt="">
+      <img src="assets/images/american_express.svg" [ngClass]="{'active':cardType == 'amex'}" alt="">
+    </div>
+    
+    <input type="tel" #ccNumber="ccNumber" ccNumber formControlName="cardNumber" class="form-control"
+      aria-describedby="emailHelp" autocomplete="cc-number" (keyup)="onCardNumberChange()">
+    <p class="error" *ngIf="isSubmitted && paymentForm.controls.cardNumber.errors?.ccNumber">Please enter valid card
+      number</p>
+  </div>
+  <div class="form-group">
+    <label>Expiry Date</label>
+    <input type="tel" autocomplete="cc-exp" ccExp formControlName="expiryDate" class="form-control">
+    <p class="error" *ngIf="isSubmitted && paymentForm.controls.expiryDate.errors?.expDate">Expiry date should be in the
+      future and in the correct format (MM/YY)</p>
+  </div>
+  <div class="form-group">
+    <label>CVV</label>
+    <input type="tel" autocomplete="off" ccCVC formControlName="cvv" class="form-control">
+    <p class="error" *ngIf="isSubmitted && paymentForm.controls.cvv.errors?.required">Please enter valid CVV</p>
+    <p class="error"
+      *ngIf="isSubmitted && (paymentForm.controls.cvv.errors?.maxlength || paymentForm.controls.cvv.errors?.minlength)">
+      CVV shoud be 3 digits</p>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

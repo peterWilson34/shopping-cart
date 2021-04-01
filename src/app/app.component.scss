@@ -1,0 +1,28 @@
+header{
+    background-image: url("../assets/images/header.jpg");
+    height: 300px;
+    @media all and (max-width: 768px) {
+        height: 150px;
+    }
+    display: flex;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    margin-bottom: 40px;
+    align-items: center;
+    justify-content: center;
+    img{
+        position: relative;
+        z-index: 1;
+        width: 300px;
+    }
+    &:after{
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: rgba(255,255,255,0.7);
+    }
+}

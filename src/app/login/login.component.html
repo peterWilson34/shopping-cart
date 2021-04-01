@@ -1,8 +1,7 @@
 <form [formGroup]="loginForm" (submit)="onUserLogin()">
   <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
+    <label for="exampleInputEmail1">Username</label>
     <input type="email" formControlName="username" class="form-control" aria-describedby="emailHelp">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
     <p class="error" *ngIf="isSubmitted && loginForm.controls.username.errors?.required">Email field is required</p>
   </div>
   <div class="form-group">
@@ -11,5 +10,5 @@
     <p class="error" *ngIf="isSubmitted && loginForm.controls.password.errors?.required">Password field is required</p>
   </div>
   
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn">Submit</button>
 </form>

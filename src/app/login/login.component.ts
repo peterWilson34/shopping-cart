@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { OrderService } from '../shared/order.service';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,7 @@ export class LoginComponent implements OnInit {
   });
   isSubmitted = false;
 
-  constructor(private router: Router,) {
+  constructor(private router: Router,private orderSerive:OrderService) {
 
   }
 
@@ -24,6 +25,7 @@ export class LoginComponent implements OnInit {
     this.isSubmitted = true;
     if (this.loginForm.valid) {
       console.log(this.loginForm);
+      this.orderSerive.orderRequest.username=this.loginForm.value.username;
       this.router.navigate(['shopping-cart/order-details']);
     }
 

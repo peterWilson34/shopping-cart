@@ -1,1 +1,15 @@
-<p>confirmation works!</p>
+<h3 class="text-center">
+    <b>Congratulation! your order #{{orderId}} has been created successfully</b>
+</h3>
+<ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Congratulation!</h4>
+     
+    </div>
+    <div class="modal-body">
+      <p>your order #{{orderId}} has been created successfully, you may now continue shopping</p>
+    </div>
+    <div class="modal-footer">
+      <button (click)="onCloseModal()" class="btn" >Continue Shoppring</button>
+    </div>
+  </ng-template>

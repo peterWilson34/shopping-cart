@@ -1,0 +1,30 @@
+.order-steps {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin-bottom: 40px;
+    @media all and (max-width: 768px) {
+        .number {
+            display: block;
+        }
+        align-items: flex-start;
+    }
+    li {
+        margin-right: 16px;
+        opacity: 0.5;
+        &.active {
+            opacity: 1;
+            .number {
+                color: #ff6566;
+            }
+        }
+        &:last-of-type {
+            margin-right: 0;
+        }
+        .number {
+            font-size: 48px;
+            font-weight: bold;
+        }
+    }
+}

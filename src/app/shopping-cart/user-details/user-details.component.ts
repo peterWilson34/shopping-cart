@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { OrderService } from 'src/app/shared/order.service';
 
 @Component({
   selector: 'app-user-details',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class UserDetailsComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,private orderService:OrderService) { }
   userDetailsForm = new FormGroup({
     name: new FormControl('', [Validators.required,Validators.minLength(5)]),
     address: new FormControl('', [Validators.required,Validators.minLength(10)]),
@@ -18,11 +19,15 @@ export class UserDetailsComponent implements OnInit {
   });
   isSubmitted = false;
   ngOnInit(): void {
+    if(this.orderService.orderRequest.userDetails){
+      this.userDetailsForm.patchValue(this.orderService.orderRequest.userDetails);
+    }
   }
   onUserLogin() {
     this.isSubmitted = true;
     if (this.userDetailsForm.valid) {
       console.log(this.userDetailsForm);
+      this.orderService.orderRequest.userDetails = this.userDetailsForm.value;
       this.router.navigate(['shopping-cart/payment-details']);
     }
 

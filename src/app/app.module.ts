@@ -14,6 +14,7 @@ import { LoginComponent } from './login/login.component';
 
 import { CreditCardDirectivesModule } from 'angular-cc-library';
 import { ConfirmationComponent } from './shopping-cart/confirmation/confirmation.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { ConfirmationComponent } from './shopping-cart/confirmation/confirmation
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    CreditCardDirectivesModule
+    CreditCardDirectivesModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

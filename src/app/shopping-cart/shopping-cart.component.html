@@ -1,1 +1,19 @@
+<ul class="order-steps">
+    <li [ngClass]="{'active':activeStep==1}">
+        <span class="number">1</span>
+        <span>Order Details</span>
+    </li>
+    <li [ngClass]="{'active':activeStep==2}">
+        <span class="number">2</span>
+        <span>Personal Details</span>
+    </li>
+    <li [ngClass]="{'active':activeStep==3}">
+        <span class="number">3</span>
+        <span>Payment Details</span>
+    </li>
+    <li [ngClass]="{'active':activeStep==4}">
+        <span class="number">4</span>
+        <span>Confirmation</span>
+    </li>
+</ul>
 <router-outlet></router-outlet>

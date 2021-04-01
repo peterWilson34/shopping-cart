@@ -8,13 +8,14 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { UserDetailsComponent } from './shopping-cart/user-details/user-details.component';
 
 const routes: Routes = [
+  {path:"",redirectTo:"login",pathMatch:"full"},
   {path:"login",component:LoginComponent},
   {path:"shopping-cart",component:ShoppingCartComponent,children:[
     {path:"",redirectTo: '/first-component',pathMatch:"full"},
     {path:"order-details",component:OrderDetailsComponent},
     {path:"user-details",component:UserDetailsComponent},
     {path:"payment-details",component:PaymentDetailsComponent},
-    {path:"confirmation",component:ConfirmationComponent},
+    {path:"confirmation/:id",component:ConfirmationComponent},
   ]}
 ];
 

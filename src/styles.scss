@@ -1,4 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+$secondary:#ff6566;
+$primary:#003266;
+
 .error{
     color: red;
 }
+.btn{
+    background-color: $secondary;
+    border-radius: 0;
+    padding: 6px 24px;
+    &:hover{
+        background-color: $primary;
+        
+        color: #fff;
+    }
+    color: #fff;
+    &.outline{
+        border:1px solid $primary;
+        color: $primary;
+        background-color: transparent;
+    }
+}
+

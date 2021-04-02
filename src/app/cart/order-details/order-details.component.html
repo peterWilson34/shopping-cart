@@ -2,9 +2,9 @@
     <h2 *ngIf="loading">Loading your cart ...</h2>
 
     <div class="product-item" *ngFor="let product of products; let i = index">
-        <div class="row">
-            <div class="col-3"><img [src]="product.image" alt=""></div>
-            <div class="col-9">
+        <div class="row justify-content-start align-items-center">
+            <div class="col flex-grow-0"><img [src]="product.image" alt=""></div>
+            <div class="col">
                 <h4>{{product.title}}</h4>
                 <p class="price">{{product.price | currency : "$"}}</p>
             </div>

@@ -10,8 +10,7 @@ export class ShoppingCartComponent implements OnInit {
   activeStep = 0;
   constructor(private router: Router) {
     router.events.subscribe((_) => {
-      console.log(router);
-
+      // get the active step to highlight it in the UI
       if (router.url == "/cart/order-details") {
         this.activeStep = 1;
       } else if (router.url == "/cart/user-details") {

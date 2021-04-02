@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
   onUserLogin() {
     this.isSubmitted = true;
     if (this.loginForm.valid) {
-      console.log(this.loginForm);
+      //set the order request and move forward
       this.orderSerive.orderRequest.username=this.loginForm.value.username;
       this.router.navigate(['cart/order-details']);
     }

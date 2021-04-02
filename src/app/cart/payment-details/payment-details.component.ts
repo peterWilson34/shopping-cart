@@ -33,7 +33,7 @@ export class PaymentDetailsComponent implements OnInit {
     if (this.paymentForm.valid) {
       let paymentDetails = this.paymentForm.value;
       paymentDetails.cardType = this.cardType;
-
+      // Post order request
       let requestBody = this.orderSerive.orderRequest;
       requestBody.paymentDetails = paymentDetails;
       this.isLoading=true;
@@ -43,8 +43,6 @@ export class PaymentDetailsComponent implements OnInit {
         
       },(err:any)=>{
         this.isLoading = false;
-        console.log(err);
-        
         this.serverError = err.message;
       })
     }

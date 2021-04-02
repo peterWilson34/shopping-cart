@@ -26,7 +26,6 @@ export class UserDetailsComponent implements OnInit {
   onUserLogin() {
     this.isSubmitted = true;
     if (this.userDetailsForm.valid) {
-      console.log(this.userDetailsForm);
       this.orderService.orderRequest.userDetails = this.userDetailsForm.value;
       this.router.navigate(['cart/payment-details']);
     }

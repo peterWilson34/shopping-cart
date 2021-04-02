@@ -16,6 +16,7 @@ export class OrderDetailsComponent implements OnInit {
   loading:Boolean=true;
   total:number=0;
   ngOnInit(): void {
+    // getting the products list
     this.serverService.getProducts().subscribe((data)=>{
       this.products = data;
       this.products.forEach(element => {
@@ -26,6 +27,7 @@ export class OrderDetailsComponent implements OnInit {
     })
   }
   onCheckout(){
+    //setting the order request and move forward
     this.orderSerive.orderRequest.orderDetails = this.products;
     this.orderSerive.orderRequest.total = this.total;
     this.router.navigate(['cart/user-details']);

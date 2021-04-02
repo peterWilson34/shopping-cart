@@ -14,7 +14,7 @@ export class UserDetailsComponent implements OnInit {
   userDetailsForm = new FormGroup({
     name: new FormControl('', [Validators.required,Validators.minLength(5)]),
     address: new FormControl('', [Validators.required,Validators.minLength(10)]),
-    phone: new FormControl('', [Validators.required,Validators.pattern(/^0\d{8,9}$/)]),
+    phone: new FormControl('', [Validators.required,Validators.pattern(/^0\d{9,10}$/)]),
     email: new FormControl('', [Validators.required,Validators.email]),
   });
   isSubmitted = false;
@@ -28,7 +28,7 @@ export class UserDetailsComponent implements OnInit {
     if (this.userDetailsForm.valid) {
       console.log(this.userDetailsForm);
       this.orderService.orderRequest.userDetails = this.userDetailsForm.value;
-      this.router.navigate(['shopping-cart/payment-details']);
+      this.router.navigate(['cart/payment-details']);
     }
 
   }

@@ -9,7 +9,7 @@ export class OrderService {
   constructor() { }
   orderRequest:{
     username?:String,
-    orderDetils?:Product[],
+    orderDetails?:Product[],
     userDetails?:{name:string,address:string,phone:string,email:string},
     paymentDetails?:{cardNumber:Number,cardExpiry:String,cvv:Number,cardType:String},
     total?:number

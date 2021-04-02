@@ -1,0 +1,15 @@
+@import "../../../variables";
+
+h3{
+    color: $primary;
+}
+.products-list{
+    list-style: none;
+    padding-left: 0;
+    li{
+        font-weight: bold;
+    }
+}
+img{
+    max-width: 100%;
+}

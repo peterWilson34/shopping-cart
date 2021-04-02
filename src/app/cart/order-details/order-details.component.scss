@@ -1,3 +1,5 @@
+
+@import "../../../variables";
 .products-list {
     border: 1px solid #eee;
     padding: 16px;
@@ -14,7 +16,7 @@
         }
 
         .price{
-            color: #ff6566;
+            color: $secondary;
         }
     }
 }

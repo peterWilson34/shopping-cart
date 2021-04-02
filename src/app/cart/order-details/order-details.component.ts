@@ -26,9 +26,9 @@ export class OrderDetailsComponent implements OnInit {
     })
   }
   onCheckout(){
-    this.orderSerive.orderRequest.orderDetils = this.products;
+    this.orderSerive.orderRequest.orderDetails = this.products;
     this.orderSerive.orderRequest.total = this.total;
-    this.router.navigate(['shopping-cart/user-details']);
+    this.router.navigate(['cart/user-details']);
   }
 
 }

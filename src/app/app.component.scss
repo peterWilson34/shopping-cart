@@ -1,3 +1,4 @@
+@import "../variables";
 header{
     background-image: url("../assets/images/header.jpg");
     height: 300px;
@@ -24,5 +25,47 @@ header{
         top: 0;
         left: 0;
         background-color: rgba(255,255,255,0.7);
+    }
+}
+
+// FOOTER
+
+footer{
+    a{
+        color: $secondary;
+    }
+    p{
+        margin-bottom: 0;
+    }
+    h3{
+        color: $secondary;
+    }
+    .footer-top{
+        padding: 60px 0;
+        background: #eee;
+        text-align: left;
+        color: $primary;
+        .logo-footer{
+            max-width: 120px;
+            margin-top: 0;
+            margin-bottom: 18px;
+        }
+        .social-icons{
+            a{
+                color: $primary;
+                margin-right: 16px;
+            }
+        }
+        @media all and(max-width:768px) {
+            h3{
+                margin-top: 24px;
+            }
+        }
+    }
+    .footer-bottom{
+        padding: 15px 0;
+        background: #444;
+        text-align: left;
+        color: #aaa;
     }
 }

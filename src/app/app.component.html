@@ -1,6 +1,51 @@
 <header>
   <img src="assets/images/logo.svg" alt="" srcset="">
 </header>
-<div class="container">
+<div class="container mb-5">
   <router-outlet></router-outlet>
 </div>
+<!-- Footer -->
+<footer >
+  <div class="footer-top">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 col-lg-4 footer-about wow fadeInUp animated"
+          style="visibility: visible; animation-name: fadeInUp;">
+          <img class="logo-footer" src="assets/images/logo.svg" alt="logo-footer" data-at2x="assets/img/logo.png">
+          <p>
+            For over 25 years, Network International has delivered innovative solutions that drive revenue and profitability for our customers. 
+            This philosophy has seen us grow to be the largest acquirer in the UAE and the leading enabler of digital commerce in the Middle East and Africa (MEA) region.
+          </p>
+        </div>
+        <div class="col-md-4 col-lg-4 offset-lg-1 footer-contact wow fadeInDown animated"
+          style="visibility: visible; animation-name: fadeInDown;">
+          <h3>Contact</h3>
+          <p><i class="fas fa-map-marker-alt"></i> Network International LLC
+            Level 1, Network Building, Al Barsha 2, Dubai</p>
+          <p><i class="fas fa-phone"></i> Phone: +971 4 3032431</p>
+          <p><i class="fas fa-envelope"></i> Email: <a href="mailto:NIBDU@network.global">NIBDU@network.global</a></p>
+        </div>
+        <div class="col-md-4 col-lg-3 footer-social wow fadeInUp animated"
+          style="visibility: visible; animation-name: fadeInUp;">
+          <h3>Follow us</h3>
+          <div class="social-icons">
+            <a href="#"><fa-icon [icon]="faFacebook"></fa-icon></a>
+            <a href="#"><fa-icon [icon]="faTwitter"></fa-icon></a>
+            <a href="#"><fa-icon [icon]="faGooglePlus"></fa-icon></a>
+            <a href="#"><fa-icon [icon]="faInstagram"></fa-icon></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5 footer-copyright">
+          <p>© Shopping Cart by <a href="http://w34.co">Peter</a></p>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,24 @@
+<h3>
+    <b>Congratulation! your order #{{orderId}} has been created successfully with the following items</b>
+</h3>
+<ul class="products-list pt-5">
+    <li *ngFor="let product of products; let i = index">
+        <span>{{product.title}}</span>
+    </li>
+</ul>
+<h3>Total: {{total | currency :"$"}}</h3>
+<div class="text-center px-4">
+    <img src="assets/images/checkmarksuccess.gif" alt="">
+</div>
+<ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Congratulation!</h4>
+     
+    </div>
+    <div class="modal-body">
+      <p>your order #{{orderId }} has been created successfully, you may now continue shopping</p>
+    </div>
+    <div class="modal-footer">
+      <button (click)="onCloseModal()" class="btn" >Continue Shopping</button>
+    </div>
+  </ng-template>

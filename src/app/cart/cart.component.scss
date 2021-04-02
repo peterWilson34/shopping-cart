@@ -1,3 +1,5 @@
+@import '../../variables';
+
 .order-steps {
     display: flex;
     justify-content: center;
@@ -16,7 +18,7 @@
         &.active {
             opacity: 1;
             .number {
-                color: #ff6566;
+                color: $secondary;
             }
         }
         &:last-of-type {

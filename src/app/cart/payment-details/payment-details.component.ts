@@ -21,6 +21,7 @@ export class PaymentDetailsComponent implements OnInit {
   isSubmitted = false;
   cardType = "";
   isLoading=false;
+  serverError="";
   ngOnInit(): void {
   }
   onCardNumberChange() {
@@ -29,8 +30,6 @@ export class PaymentDetailsComponent implements OnInit {
   }
   onCheckout() {
     this.isSubmitted = true;
-    console.log(this.paymentForm);
-
     if (this.paymentForm.valid) {
       let paymentDetails = this.paymentForm.value;
       paymentDetails.cardType = this.cardType;
@@ -39,10 +38,14 @@ export class PaymentDetailsComponent implements OnInit {
       requestBody.paymentDetails = paymentDetails;
       this.isLoading=true;
       this.serverService.postOrder(requestBody).subscribe((res:any)=>{
-        console.log(res);
         this.isLoading = false;
-        this.router.navigate(['shopping-cart/confirmation',res['order_id']]);
+        this.router.navigate(['cart/confirmation',res['order_id']]);
         
+      },(err:any)=>{
+        this.isLoading = false;
+        console.log(err);
+        
+        this.serverError = err.message;
       })
     }
 

@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.valid) {
       console.log(this.loginForm);
       this.orderSerive.orderRequest.username=this.loginForm.value.username;
-      this.router.navigate(['shopping-cart/order-details']);
+      this.router.navigate(['cart/order-details']);
     }
 
   }

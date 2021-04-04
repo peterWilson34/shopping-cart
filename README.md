@@ -14,3 +14,8 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+
+
+## Credit Card validation
+
+you can use this link https://www.paypalobjects.com/en_GB/vhelp/paypalmanager_help/credit_card_numbers.htm to get valid CC numbers for testing.
